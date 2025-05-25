@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cole Yadron</title>
+    <script src="js/theme.js" defer></script>
+    <script>
+        document.documentElement.classList.toggle(
+        "dark",
+        localStorage.getItem("theme") === "dark"
+        || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        );
+    </script>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-100 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-full shadow-lg border border-gray-200 dark:border-gray-700 px-6 py-2 flex space-x-6 items-center transition-all duration-300">
+    <a href="#" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 font-medium">Home</a>
+    <a href="#" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 font-medium">About</a>
+    <a href="#" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 font-medium">Projects</a>
+    <a href="#" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 font-medium">Contact</a>
+    <button 
+    onclick="toggleTheme()" 
+    class="bg-gray-200 dark:bg-gray-700 rounded-full transition-colors duration-300 hover:ring-2 hover:ring-offset-2 hover:ring-purple-400"
+    aria-label="Toggle dark mode">
+    🌓
+    </button>
+</nav>
+
+<body>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+        <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-4">Cole Yadron</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Designer. Software Developer. Creative.</p>
+        <a href="#" class="bg-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300">View My Work</a>
+    </div>
+</body>
+
+</html>
