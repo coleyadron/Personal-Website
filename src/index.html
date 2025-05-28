@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./output.css">
 </head>
 
-<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-100 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-full shadow-lg border border-gray-200 dark:border-gray-700 px-6 py-2 flex space-x-6 items-center transition-all duration-300">
+<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-100 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-full shadow-lg border border-gray-200 dark:border-gray-700 px-6 py-2 flex space-x-6 items-center transition-all duration-300">
     <a href="#" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 font-medium">Home</a>
     <a href="#" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 font-medium">About</a>
     <a href="#" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 font-medium">Projects</a>
@@ -21,12 +21,23 @@
     </button>
 </nav>
 
-<body class="bg-gray-100 dark:bg-gray-900 overflow-hidden transition-all duration-300">
-    <div class="flex flex-col items-center justify-center min-h-screen">
+<body class="w-full h-screen relative bg-gray-100 dark:bg-neutral-700 overflow-hidden transition-all duration-300">
+
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen">
         <h1 class="text-8xl font-bold text-gray-800 dark:text-white mb-4 font-mono bootup">Cole Yadron</h1>
-        <p class="text-2xl text-gray-600 dark:text-gray-300 mb-8 font-mono bootup">Designer. Software Developer. Creative.</p>
-        <a href="#" class="bg-purple-600 dark:bg-purple-800 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300">View My Work</a>
+        <p class="text-2xl text-gray-700 dark:text-gray-200 mb-8 font-mono bootup">Designer. Software Developer. Creative.</p>
+        <a href="#" class="bg-purple-600 dark:bg-purple-800 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 crt-glow">View My Work</a>
+    </div>
+
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute blur-sm top-0 left-1/2 w-[200%] h-full space-y-4 transform -translate-x-1/2 rotate-11 origin-left">
+            <!-- Repeat these stripes multiple times -->
+            <div class="w-full h-7 bg-red-500 animate-stripe-scroll" style="animation-delay: 0.1s"> </div>
+            <div class="w-full h-7 bg-blue-500 animate-stripe-scroll" style="animation-delay: 0.2s"></div>
+            <div class="w-full h-7 bg-green-500 animate-stripe-scroll" style="animation-delay: 0.3s"></div>
+            <div class="w-full h-7 bg-yellow-500 animate-stripe-scroll" style="animation-delay: 0.4s"></div>
+            <div class="w-full h-7 bg-purple-500 animate-stripe-scroll" style="animation-delay: 0.5s"></div>
+        </div>
     </div>
 </body>
-
 </html>

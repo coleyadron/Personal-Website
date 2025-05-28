@@ -1,3 +1,80 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.crt-glow {
+    text-shadow: 0 0 4px rgb(230, 0, 255), 0 0 8px rgb(230, 0, 255);
+}
+
+.crt-screen {
+background: radial-gradient(ellipse at center, #2e0033 0%, #000 100%);
+box-shadow: inset 0 0 30px rgb(230, 0, 255);
+border-radius: 12px;
+overflow: hidden;
+position: relative;
+transform: perspective(800px) scale(1.02);
+filter: contrast(1.2) saturate(1.2);
+}
+
+@keyframes crtBoot {
+0% { opacity: 0; filter: brightness(0) blur(20px); transform: scale(1.2); }
+20% { opacity: 1; filter: brightness(1.5) blur(0); transform: scale(1); }
+50% { opacity: 0.7; }
+70% { opacity: 1; }
+100% { opacity: 1; }
+}
+
+.bootup {
+animation: crtBoot 1.5s ease-out;
+}
+
+@keyframes scrollScanlines {
+0% {
+    background-position: 0 0;
+}
+100% {
+    background-position: 0 100%;
+}
+}
+
+@keyframes flicker {
+0%, 100% { opacity: 0.2; }
+50% { opacity: 0.3; }
+}
+
+.scanlines::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.2) 3px,
+    rgba(0, 0, 0, 0.2) 4px
+);
+background-size: 100% 4px;
+animation: scrollScanlines 4s linear infinite, flicker 0.3s infinite;
+pointer-events: none;
+}
+
+@keyframes fallDiagonal {
+    0% { transform: translateY(-150%) rotate(12deg); opacity: 0.5; }
+    100% { transform: translateY(110vh) rotate(12deg); opacity: 0.5; }
+}
+
+.animate-diagonal-stripe {
+    animation: fallDiagonal 2s linear infinite;
+}
+
+@keyframes scrollX {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+}
+
+.animate-stripe-scroll {
+    animation: scrollX 1.5s linear ;
+}
